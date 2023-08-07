@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url(./Caveat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Sen';
+    src: url(./fonts/Sen/Sen-VariableFont_wght.ttf);
+}
+
 @keyframes SlideToTheRight {
     from {
         opacity: 0;
@@ -41,12 +51,16 @@
 
 
 * {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Sen', sans-serif;
     scroll-behavior: smooth;
-    font-weight: lighter;
+    background-color: black;
+
 }
+p,h1,div {background-color: transparent;}
 
 .first-page {
+    font-family: 'Caveat', sans-serif;
+    font-weight: lighter;
     user-select: none;
     height: 100vh;
     display: flex;
@@ -55,6 +69,7 @@
     align-items: center;
     font-weight: 300;
     font-size: 50px;
+    color: white;
 }
 
 .name-container {
@@ -77,42 +92,10 @@
     animation: SlideUp 1s ease-in 1.5s forwards;
 }
 
-
-
-.projects-container {
-    height: 400vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-}
-.type{
+.type {
     position: absolute;
     bottom: 0%;
     left: 5%;
-}
-
-img{
-    max-width: 100%;
-    max-height: 100%;
-}
-/*COIMBRA REPORTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-
-
-.project-container-coimbra-reporta {
-    background-image: url("./coimbrareporta.png");
-
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 4px, rgba(0, 0, 0, 0.1);
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*background-color: black;*/
-
-    flex: 1;
-    border: 1px black;
-
 }
 
 #coimbra-reporta-title {
@@ -155,86 +138,143 @@ img{
 
 
 
-/*STONECASTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
-.project-container-stonecast {
-    position: relative;
-    display: flex;
-    font-size: 30px;
-    align-items: center;
-    justify-content: space-evenly;
-    user-select: none;
-    flex: 1;
+
+
+
+
+
+.projects-container {
+    height: auto;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-rows: minmax(70%, auto);
+    grid-auto-columns: minmax(50%, auto);
+    grid-template-areas:
+        'so-far'
+        'coimbra-reporta'
+        'stonecast'
+        'redlight'
+        'to-do'
+    ;
+    padding-block: 2rem;
+    margin-inline: auto;
 }
 
-.stonecast-img-container {
-
+.projects-overview {
+    grid-area: so-far;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+}
+.image-container {
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
     max-width: 100%;
-    width: 50%;
-
+    border: solid 1px black;
 }
-
-.stonecast-desc {
-    position: relative;
-    font-weight: 400;
-
-}
-
-
-
-
-
-
-
-
-
-/*REDLIGHTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
-.project-container-redlight-summerint-project {
-    font-size: 30px;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    flex: 1;
+.project-container{
+    background-color: rgb(55, 53, 53);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
+    flex-direction: column;
 }
+img {
+    max-width: 100%;
+}
+.desc {
+    height: 40%;
+    max-width: 40vw;
 
-.project-container-redlight-summerint-project .sum-int-desc {
-    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    margin-left: 2%;
+    color: rgb(255, 255, 255);
 
 }
-.redlight-name {
-    text-align: center;   
-  }
+.desc h1{
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+
+
+.desc p {
+
+    text-overflow: ellipsis;
+    font-size: x-large;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+/*COIMBRA REPORTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+
+
+.coimbra-reporta-div {
+    
+    grid-area: coimbra-reporta;
   
 
-.project-container-redlight-summerint-project .sumintimgcontainer {
+}
 
-    flex: 1;
+.cr-img {
+    
+    background-image: url("./assets/CoimbraReportalogin.png");
+    
+}
 
 
+
+
+/*STONECASTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+.stonecast-div {
+  
+    grid-area: stonecast;
+    
+}
+
+.stonecast-img {
+    background-image: url("./assets/StoneCastHome.png");
+}
+
+.redlight-summerint-div {
+    grid-area: redlight;
+  
+}
+.redlight-summerint-img{
+    background-image:url("./assets/RedlightHome.png") ;
 }
 
 
 
 /*TODO LISTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
 
-.project-container-to-do-list {
-    position: relative;
-    display: flex;
-    font-size: 30px;
-    align-items: center;
-    justify-content: space-evenly;
-    user-select: none;
-    flex: 1;
+.to-do-list-div {
 
+    grid-area: to-do;
 }
 
-.tortledescription {
-    position: relative;
-    font-weight: 400;
+@media screen and (min-width: 33em) {
+    .projects-container {
+        grid-template-areas:
+            "so-far coimbra-reporta"
 
+            "stonecast coimbra-reporta"
+            "stonecast redlight"
+            "to-do redlight"
+         
+        ;
+    }
 }
