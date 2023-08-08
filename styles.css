@@ -54,7 +54,7 @@
     font-family: 'Sen', sans-serif;
     scroll-behavior: smooth;
     background-color: black;
-
+    user-select: none;
 }
 p,h1,div {background-color: transparent;}
 
@@ -91,66 +91,33 @@ p,h1,div {background-color: transparent;}
     opacity: 0;
     animation: SlideUp 1s ease-in 1.5s forwards;
 }
-
-.type {
+.case-studies{
     position: absolute;
-    bottom: 0%;
-    left: 5%;
-}
-
-#coimbra-reporta-title {
     color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
+    font-size: 125px;
+    margin-left: 5%;
 }
-
-.buttoncontainer {
-    width: 100%;
-    height: 20%;
-
-    display: flex;
-    justify-content: space-evenly;
+.case-title{
+    
+    z-index: 10;
+    
 }
-
-.B {
-    border-color: white;
-    border-radius: 6px;
-    background-color: black;
-    color: white;
-    box-shadow: 0 0 5px 1px rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    padding: 10px;
+.case-stroke{
+    
+    -webkit-text-fill-color: black; 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 }
-
-.B.code:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-}
-
-.B.preview:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-}
-
-
-
-
-
-
-
 
 .projects-container {
+    margin-top: 20%;
     height: auto;
-    width: 90%;
+    width: 85%;
     position: absolute;
     left: 5%;
     display: grid;
     gap: 1.5rem;
-    grid-auto-rows: minmax(70%, auto);
+    grid-auto-rows: minmax(65%, auto);
     grid-auto-columns: minmax(50%, auto);
     grid-template-areas:
         'so-far'
@@ -158,6 +125,7 @@ p,h1,div {background-color: transparent;}
         'stonecast'
         'redlight'
         'to-do'
+        'spacer'
     ;
     padding-block: 2rem;
     margin-inline: auto;
@@ -178,7 +146,6 @@ p,h1,div {background-color: transparent;}
     background-size: contain;
     background-repeat: no-repeat;
     max-width: 100%;
-    border: solid 1px black;
 }
 .project-container{
     background-color: rgb(55, 53, 53);
@@ -257,7 +224,9 @@ img {
     background-image:url("./assets/RedlightHome.png") ;
 }
 
-
+.to-do-list-img{
+    background-image:url("./assets/todolist.png") ;
+}
 
 /*TODO LISTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
 
@@ -266,6 +235,9 @@ img {
     grid-area: to-do;
 }
 
+.spacer{
+    grid-area: spacer;
+}
 @media screen and (min-width: 33em) {
     .projects-container {
         grid-template-areas:
@@ -274,6 +246,7 @@ img {
             "stonecast coimbra-reporta"
             "stonecast redlight"
             "to-do redlight"
+            "to-do spacer"
          
         ;
     }
