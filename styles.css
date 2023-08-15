@@ -36,7 +36,7 @@
 
 @keyframes SlideUp {
     from {
-        transform: translateY(80px) rotate(0);
+        transform: translateY(80px);
         opacity: 0;
 
     }
@@ -44,19 +44,24 @@
     to {
 
         opacity: 1;
-        transform: translateX(0px) rotate(360deg);
+        transform: translateX(0px);
     }
 
 }
-
 
 * {
     font-family: 'Sen', sans-serif;
     scroll-behavior: smooth;
     background-color: black;
     user-select: none;
+    margin: 0;
 }
-p,h1,div {background-color: transparent;}
+
+p,
+h1,
+div {
+    background-color: transparent;
+}
 
 .first-page {
     font-family: 'Caveat', sans-serif;
@@ -91,34 +96,45 @@ p,h1,div {background-color: transparent;}
     opacity: 0;
     animation: SlideUp 1s ease-in 1.5s forwards;
 }
-.case-studies{
-    position: absolute;
-    color: white;
-    font-size: 125px;
+
+
+
+
+
+.case-studies-title-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 5%;
 }
-.case-title{
-    
-    z-index: 10;
-    
+
+.case-studies {
+    color: white;
+    font-size: 125px;
+    margin: 0;
 }
-.case-stroke{
-    
-    -webkit-text-fill-color: black; 
+
+.case-title {
+
+    z-index: 10;
+
+}
+
+.case-stroke {
+    position: absolute;
+    -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
 }
 
 .projects-container {
-    margin-top: 20%;
-    height: auto;
-    width: 85%;
-    position: absolute;
-    left: 5%;
+
+    width: 75%;
     display: grid;
-    gap: 1.5rem;
-    grid-auto-rows: minmax(65%, auto);
-    grid-auto-columns: minmax(50%, auto);
+    /* gap: 1.5rem; */
+    grid-auto-rows: 270px;
+    grid-template-columns: repeat(2, calc(45% - 2rem));
+    gap: 2rem 2rem;
     grid-template-areas:
         'so-far'
         'coimbra-reporta'
@@ -127,8 +143,9 @@ p,h1,div {background-color: transparent;}
         'to-do'
         'spacer'
     ;
-    padding-block: 2rem;
+    /* padding-block: 2rem; */
     margin-inline: auto;
+    margin-bottom: 2rem;
 }
 
 .projects-overview {
@@ -141,47 +158,49 @@ p,h1,div {background-color: transparent;}
     font-family: cursive;
     color: white;
 }
+
 .image-container {
     height: 50%;
     background-size: contain;
     background-repeat: no-repeat;
-    max-width: 100%;
-}
-.project-container{
-    background-color: rgb(55, 53, 53);
-    
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-img {
-    max-width: 100%;
-}
-.desc {
-    height: 40%;
-    max-width: 40vw;
 
+}
+
+.project-container {
+    background-color: rgb(55, 53, 53);
+
+    background-size:auto;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+}
+
+
+
+.desc {
+    width: 95%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin-left: 2%;
     color: rgb(255, 255, 255);
 
 }
-.desc h1{
+
+.desc h1 {
     font-weight: bold;
-    font-size: xx-large;
+    font-size: x-large;
 
 }
 
 
 .desc p {
 
-    text-overflow: ellipsis;
-    font-size: x-large;
-    font-weight: bold;
-    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+    font-size: large;
+    display: inline-block;
+    /*white-space: nowrap;*/
 }
 
 
@@ -189,16 +208,16 @@ img {
 
 
 .coimbra-reporta-div {
-    
+
     grid-area: coimbra-reporta;
-  
+
 
 }
 
 .cr-img {
-    
+
     background-image: url("./assets/CoimbraReportalogin.png");
-    
+
 }
 
 
@@ -207,9 +226,9 @@ img {
 /*STONECASTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
 
 .stonecast-div {
-  
+
     grid-area: stonecast;
-    
+
 }
 
 .stonecast-img {
@@ -218,14 +237,15 @@ img {
 
 .redlight-summerint-div {
     grid-area: redlight;
-  
-}
-.redlight-summerint-img{
-    background-image:url("./assets/RedlightHome.png") ;
+
 }
 
-.to-do-list-img{
-    background-image:url("./assets/todolist.png") ;
+.redlight-summerint-img {
+    background-image: url("./assets/RedlightHome.png");
+}
+
+.to-do-list-img {
+    background-image: url("./assets/todolist.png");
 }
 
 /*TODO LISTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
@@ -235,9 +255,10 @@ img {
     grid-area: to-do;
 }
 
-.spacer{
+.spacer {
     grid-area: spacer;
 }
+
 @media screen and (min-width: 33em) {
     .projects-container {
         grid-template-areas:
@@ -247,7 +268,181 @@ img {
             "stonecast redlight"
             "to-do redlight"
             "to-do spacer"
-         
+
         ;
     }
 }
+
+.animated-title {
+    z-index: 9;
+}
+
+.contact-me-title-div {
+    font-size: 3rem;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contact-stroke {
+    position: absolute;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.contact-title {
+    color: white;
+    z-index: 10;
+}
+
+.lets-talk {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.fa-envelope {
+    color: white;
+}
+
+.custom-icon {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sprite-animation {
+    width: 106px;
+    height: 92px;
+    background: url('assets/coinsprites/coinsprite1.png');
+
+    /* animation-iteration-count: 1; */
+    background-position: center;
+
+
+}
+
+@keyframes playSpriteAnimation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1402 0;
+    }
+}
+
+.exp-ft{
+    color: white;
+    position: absolute;
+    top: 25%;
+}
+.p-switch{
+    background-image: url("assets/switch.png");
+    background-position: 1% center;
+    width: 82px;
+    height: 92px;
+    position: absolute;
+    top: 40%;
+
+    transform: rotate(90deg);
+  
+    
+  }.p-switch:hover{
+    cursor: pointer;
+  }
+  
+  .pressed-down{
+    background-image: url("assets/switch.png");
+    background-position: 33.5% center;
+    pointer-events: none;
+  }
+  
+  .coin{
+    border-radius: 20%;
+    background-color: transparent;
+    width: 92px;
+    height: 92px;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 90;
+    top: 20%;
+    left: 3%;
+    transform-style: preserve-3d;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  .back{
+    background-image: url("assets/coinsprites/coinsprite1.png");
+    width: 92px;
+    height: 92px;
+  }
+  
+  .middle{
+    background-image: url("assets/coinsprites/coinsprite1.png");
+    width: 92px;
+    
+    
+    height: 92px;background-position: center;
+    transform: translateZ(1px);
+    position: absolute;
+    top: 0;
+  }
+  
+  .front{
+      background-image: url("assets/coinsprites/coinsprite1.png");
+      height: 92px;
+      position: absolute;
+      top: 0;
+      transform: translateZ(10px);
+      width: 92px;
+  }
+  
+  .middle:nth-child(1){
+    transform: translateZ(1px);
+  }
+  
+  .middle:nth-child(2){
+    transform: translateZ(2px);
+  }
+  
+  .middle:nth-child(3){
+    transform: translateZ(3px);
+  }
+  
+  .middle:nth-child(4){
+    transform: translateZ(4px);
+  }
+  
+  .middle:nth-child(5){
+    transform: translateZ(5px);
+  }
+  
+  .middle:nth-child(6){
+    transform: translateZ(6px);
+  }
+  
+  .middle:nth-child(7){
+    transform: translateZ(7px);
+  }
+  
+  .middle:nth-child(8){
+    transform: translateZ(8px);
+  }
+  
+  .middle:nth-child(9){
+    transform: translateZ(9px);
+  }
+  
+  @keyframes spin{
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(360deg);}
+  }
