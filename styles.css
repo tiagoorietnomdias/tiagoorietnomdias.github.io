@@ -307,10 +307,31 @@ div {
         pointer-events: none;
     }
     .coin-wrapper {
-        background-color: transparent;
         position: absolute;
         perspective: 1000px;
         z-index: 90;
+    }
+    .coin-element{
+        background-color: transparent;
+        z-index: 90;
+        width: 92px;
+        height: 92px;
+    }
+    .coin-number-div h1{
+        
+        font-size: 3rem;
+        text-align: center;
+        font-size:7rem;
+        background: #FF0000;
+        background: linear-gradient(to bottom, #FF0000 0%, #FFFF00 100%);
+        background-clip: text;
+        -webkit-background-clip: text; 
+        -moz-background-clip: text;    
+        -o-background-clip: text; 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
     }
     .coin {
         border-radius: 20%;
@@ -329,21 +350,11 @@ div {
 
     .back {
         background-image: url("assets/coinsprites/coinsprite1.png");
-        background-color: transparent;
 
-        width: 92px;
-        height: 92px;
-        z-index: 90;
     }
 
     .middle {
         background-image: url("assets/coinsprites/coinsprite1.png");
-        width: 92px;
-        z-index: 90;
-        background-color: transparent;
-
-
-        height: 92px;
         background-position: center;
         transform: translateZ(1px);
         position: absolute;
@@ -352,78 +363,46 @@ div {
 
     .front {
         background-image: url("assets/coinsprites/coinsprite1.png");
-        height: 92px;
-        z-index: 90;
-        background-color: transparent;
-
         position: absolute;
         top: 0;
         transform: translateZ(10px);
-        width: 92px;
-    }
+        }
 
     .middle:nth-child(1) {
-        background-color: transparent;
-
         transform: translateZ(1px);
-        z-index: 90;
     }
 
     .middle:nth-child(2) {
-        background-color: transparent;
-
         transform: translateZ(2px);
-        z-index: 90;
     }
 
     .middle:nth-child(3) {
-        background-color: transparent;
-
         transform: translateZ(3px);
-        z-index: 90;
     }
 
     .middle:nth-child(4) {
-        background-color: transparent;
-
         transform: translateZ(4px);
-        z-index: 90;
     }
 
     .middle:nth-child(5) {
-        background-color: transparent;
-
         transform: translateZ(5px);
-        z-index: 90;
     }
 
     .middle:nth-child(6) {
-        background-color: transparent;
-
         transform: translateZ(6px);
-        z-index: 90;
     }
 
     .middle:nth-child(7) {
-        background-color: transparent;
-
         transform: translateZ(7px);
-        z-index: 90;
     }
 
     .middle:nth-child(8) {
-        background-color: transparent;
-
         transform: translateZ(8px);
-        z-index: 90;
     }
 
     .middle:nth-child(9) {
-        background-color: transparent;
-
         transform: translateZ(9px);
-        z-index: 90;
-    }
+        }
 
     @keyframes spin {
         0% {
@@ -603,3 +582,15 @@ div {
     display: flex;
     justify-content: space-evenly;
 }
+
+/* animations called out by js */
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes scale-unscale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% {transform: scale(1);}
+  }
