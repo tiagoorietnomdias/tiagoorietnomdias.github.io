@@ -137,9 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
                         });
 
-                        const highscoreWindow = document.createElement('div');
-                        highscoreWindow.className = 'highscore-window';
-                        }
+                        // const highscoreWindow = document.createElement('div');
+                        // highscoreWindow.className = 'highscore-window';
+                        pswitch.classList.toggle('pressed-down');
+    
+                    }
 
                     
                     //if not
