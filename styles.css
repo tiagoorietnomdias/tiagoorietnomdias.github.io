@@ -57,6 +57,10 @@
     margin: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 p,
 h1,
 div {
@@ -134,7 +138,7 @@ div {
     /* gap: 1.5rem; */
     grid-auto-rows: 200px;
     grid-template-columns: repeat(2, calc(45% - 2rem));
-   gap: 2rem;
+    gap: 2rem;
     grid-template-areas:
         'so-far'
         'coimbra-reporta'
@@ -144,8 +148,9 @@ div {
         'spacer'
     ;
     /* padding-block: 2rem; */
-    margin-inline: auto;
+    margin-inline: 0;
     /* margin-bottom: 2rem; */
+    margin-left: 12.5%;
 }
 
 .projects-overview {
@@ -301,7 +306,12 @@ div {
         background-position: 33.5% center;
         pointer-events: none;
     }
-
+    .coin-wrapper {
+        background-color: transparent;
+        position: absolute;
+        perspective: 1000px;
+        z-index: 90;
+    }
     .coin {
         border-radius: 20%;
         background-color: transparent;
@@ -319,13 +329,18 @@ div {
 
     .back {
         background-image: url("assets/coinsprites/coinsprite1.png");
+        background-color: transparent;
+
         width: 92px;
         height: 92px;
+        z-index: 90;
     }
 
     .middle {
         background-image: url("assets/coinsprites/coinsprite1.png");
         width: 92px;
+        z-index: 90;
+        background-color: transparent;
 
 
         height: 92px;
@@ -338,6 +353,9 @@ div {
     .front {
         background-image: url("assets/coinsprites/coinsprite1.png");
         height: 92px;
+        z-index: 90;
+        background-color: transparent;
+
         position: absolute;
         top: 0;
         transform: translateZ(10px);
@@ -345,39 +363,66 @@ div {
     }
 
     .middle:nth-child(1) {
+        background-color: transparent;
+
         transform: translateZ(1px);
+        z-index: 90;
     }
 
     .middle:nth-child(2) {
+        background-color: transparent;
+
         transform: translateZ(2px);
+        z-index: 90;
     }
 
     .middle:nth-child(3) {
+        background-color: transparent;
+
         transform: translateZ(3px);
+        z-index: 90;
     }
 
     .middle:nth-child(4) {
+        background-color: transparent;
+
         transform: translateZ(4px);
+        z-index: 90;
     }
 
     .middle:nth-child(5) {
+        background-color: transparent;
+
         transform: translateZ(5px);
+        z-index: 90;
     }
 
     .middle:nth-child(6) {
+        background-color: transparent;
+
         transform: translateZ(6px);
+        z-index: 90;
     }
 
     .middle:nth-child(7) {
+        background-color: transparent;
+
         transform: translateZ(7px);
+        z-index: 90;
     }
 
     .middle:nth-child(8) {
+        background-color: transparent;
+
         transform: translateZ(8px);
+        z-index: 90;
     }
 
     .middle:nth-child(9) {
+        background-color: transparent;
+
         transform: translateZ(9px);
+        z-index: 90;
     }
 
     @keyframes spin {
@@ -392,6 +437,13 @@ div {
 }
 
 @media screen and (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 
     .projects-container {
         margin-top: 5%;
@@ -406,15 +458,23 @@ div {
         gap: 1rem;
         display: flex;
         flex-direction: column;
-        
+
         grid-auto-rows: 400px;
     }
-    .projects-overview {font-size: 2rem;}
+    .name-container {
+        display: flex;
+        gap: 30px;
+    }
+
+    .projects-overview {
+        font-size: 2rem;
+    }
+
     .project-container {
         flex-direction: column;
         font-size: 1rem;
         flex: 1;
-        
+
     }
 
     .desc {
@@ -422,16 +482,33 @@ div {
         height: auto;
     }
 
+    .desc h1 {
+        font-size: 2rem;
+    }
+
+    .desc p {
+        font-size: 0.9rem;
+        padding: 20px;
+    }
+
     .image-container {
-        flex:2;
-        
-        background-size:contain;
+        flex: 2;
+
+        background-size: contain;
         background-repeat: no-repeat;
         min-height: 200px;
     }
 
     .fa-brands,
     .fa-envelope {
+        transform: scale(0.5);
+    }
+
+    .fa-brands:hover,
+    .fa-envelope:hover {
+        animation: 0.2s 0s infinite alternate hover-effect;
+
+
         transform: scale(0.5);
     }
 
@@ -449,14 +526,18 @@ div {
         font-size: 2rem;
         color: white;
     }
-     .animated-title, .case-stroke, .contact-stroke{
+
+    .animated-title,
+    .case-stroke,
+    .contact-stroke {
         font-size: 2.5rem;
     }
+
     .contact-wrapper {
         display: flex;
         justify-content: center;
     }
-    
+
 }
 
 .animated-title {
@@ -498,26 +579,27 @@ div {
     background-color: black;
     border: 1px solid black;
 }
-.fa-brands:hover,
-    .fa-envelope:hover {
 
-      
-    
+.fa-brands:hover,
+.fa-envelope:hover {
+
+
+
     animation: 0.2s 0s infinite alternate hover-effect;
 }
 
 @keyframes hover-effect {
-  from {
-    
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
+    from {
+
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
 }
 
 .contact-wrapper {
     display: flex;
     justify-content: space-evenly;
 }
-

@@ -1,5 +1,5 @@
 const pswitchAudio = new Audio('./assets/pswitchthemefinal.mp3');
-const coinAudio = new Audio('./assets/mario-coin.mp3');
+
 
 const elements = document.getElementsByClassName('animated-title');
 const movementFactor = 0.3; // Adjust this to control the extent of the parallax effect
@@ -45,7 +45,7 @@ function spawnCoin() {
     pswitchAudio.play();
     for (let j = 0; j < 6; j++) {
         const coinWrapper = document.createElement('div');
-        coinWrapper.className = 'coinWrapper';
+        coinWrapper.className = 'coin-wrapper';
 
         const coinDiv = document.createElement('div');
         const randomTranslateX = Math.random() * (window.innerWidth - 1000); // Adjust the range as needed
@@ -92,29 +92,24 @@ function deleteCoin() {
 document.addEventListener('DOMContentLoaded', function () {
     const pswitch = document.getElementById('p-switch');
 
-    let isCoinAudioPlaying = false;
 
     pswitch.addEventListener('click', function () {
         pswitch.classList.toggle('pressed-down');
         const coinElement = document.getElementsByClassName('coinElement');
-
+        ///coin catch
         Array.from(coinElement).forEach(element => {
-            element.addEventListener('click', function () {
-                if (isCoinAudioPlaying) {
-                    coinAudio.pause();
-                    coinAudio.currentTime = 0; // Reset playback position
-                }
-
+            element.addEventListener('mouseenter', function () {
+                
+                const coinAudio = new Audio('./assets/mario-coin.mp3');
                 coinAudio.play();
-                isCoinAudioPlaying = true;
+
 
                 var parentElement = element.parentElement;
                 parentElement.style.transition = "opacity 0.3s";
                 parentElement.style.opacity = 0;
-
+                parentElement.style.pointerEvents = 'none';
                 parentElement.addEventListener('transitionend', () => {
                     parentElement.remove();
-                    isCoinAudioPlaying = false; // Reset the flag after the transition
                 });
             });
         });
