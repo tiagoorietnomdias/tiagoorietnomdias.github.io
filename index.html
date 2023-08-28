@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js"></script>
+
+    <script type="module" src="./script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" href="./assets/icon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -25,7 +27,7 @@
 
         <h2 class="job">Developer</h4>
     </section>
-    <div class="p-switch" id="p-switch" onclick="spawnCoin('./assets/pswitchthemefinal.mp3')"></div>
+    <div class="p-switch" id="p-switch"></div>
     <h2 class="exp-ft">WARNING! <br>EXPERIMENTAL FEATURE <br>DO NOT TOUCH</h2>
 
 
@@ -58,13 +60,14 @@
             </div>
             <div class="desc">
                 <h1>Stonecast</h1>
-                <p>Broadcast at the tip of your fingers, literally! Website for a company that sells stones that can tell the weather based on how the stone looks.
+                <p>Broadcast at the tip of your fingers, literally! Website for a company that sells stones that can
+                    tell the weather based on how the stone looks.
                 </p>
 
 
             </div>
 
-        </div><!-- -->
+        </div>
         <div class="redlight-summerint-div project-container">
             <div class="redlight-summerint-img image-container">
 
@@ -106,7 +109,25 @@
         <a href="https://www.linkedin.com/in/tiagoorietnomdias"><i class="fa-brands fa-linkedin-in fa-10x"
                 style="color: #ffffff;"></i></a>
     </div>
+    <div class="highscore-window" id="highscore-window">
 
+
+        <div class="highscores-container">
+            <p id="your-score">Your score:</p>
+            <h3>Highscores:</h3>
+            <p id="#1"> </p>
+            <p id="#2"> </p>
+            <p id="#3"> </p>
+            <p id="#4"> </p>
+            <p id="#5"> </p>
+            <p id="#6"> </p>
+            <p id="#7"> </p>
+            <p id="#8"> </p>
+            <p id="#9"> </p>
+            <p id="#10"> </p>
+        </div>
+    </div>
+    <div id="overlay"></div>
 
 
 </body>

@@ -1,9 +1,4 @@
 @font-face {
-    font-family: 'Caveat';
-    src: url(./Caveat-Regular.ttf);
-}
-
-@font-face {
     font-family: 'Sen';
     src: url(./fonts/Sen/Sen-VariableFont_wght.ttf);
 }
@@ -306,33 +301,37 @@ div {
         background-position: 33.5% center;
         pointer-events: none;
     }
+
     .coin-wrapper {
         position: absolute;
         perspective: 1000px;
         z-index: 90;
     }
-    .coin-element{
+
+    .coin-element {
         background-color: transparent;
         z-index: 90;
         width: 92px;
         height: 92px;
     }
-    .coin-number-div h1{
-        
+
+    .coin-number-div h1 {
+
         font-size: 3rem;
         text-align: center;
-        font-size:7rem;
+        font-size: 7rem;
         background: #FF0000;
         background: linear-gradient(to bottom, #FF0000 0%, #FFFF00 100%);
         background-clip: text;
-        -webkit-background-clip: text; 
-        -moz-background-clip: text;    
-        -o-background-clip: text; 
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -o-background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: white;
     }
+
     .coin {
         border-radius: 20%;
         background-color: transparent;
@@ -366,7 +365,7 @@ div {
         position: absolute;
         top: 0;
         transform: translateZ(10px);
-        }
+    }
 
     .middle:nth-child(1) {
         transform: translateZ(1px);
@@ -402,7 +401,7 @@ div {
 
     .middle:nth-child(9) {
         transform: translateZ(9px);
-        }
+    }
 
     @keyframes spin {
         0% {
@@ -440,6 +439,7 @@ div {
 
         grid-auto-rows: 400px;
     }
+
     .name-container {
         display: flex;
         gap: 30px;
@@ -585,12 +585,89 @@ div {
 
 /* animations called out by js */
 @keyframes fade-out {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
+    0% {
+        opacity: 1;
+    }
 
-  @keyframes scale-unscale {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.5); }
-    100% {transform: scale(1);}
-  }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes scale-unscale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.highscore-window {
+    position: fixed;
+    width: 30%;
+    height: 50%;
+    z-index: 1000;
+    top: 25%;
+    left: 35%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    transform: scale(0);
+}
+
+.highscore-window.active {
+
+    transform: scale(1);
+}
+
+.highscores-container {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(84, 84, 84, 1) 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: white;
+
+}
+
+.highscores-container p {
+    border: 1px solid black;
+    width: 70%;
+
+}
+
+.highscores-container h3 {
+    color: white;
+    background-color: transparent;
+    width: 50%;
+}
+
+#overlay {
+    transform: scale(0);
+}
+
+#overlay.active {
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+
+    z-index: 999;
+}
+#overlay.active:focus {
+    
+    background-color: rgba(165, 33, 33, 0.5);
+    
+}
